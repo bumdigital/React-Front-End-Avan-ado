@@ -1,14 +1,16 @@
-import { Row } from 'react-bootstrap';
+// CHAMADA DE COMPONENTE 2 DO PROJETO FRONT AVANÇAD
 
-export default function Home(props) {
+import Loading from '../components/loading/index';
+import {lazy, Suspense} from 'react';
+
+const Homee = lazy(()=>import('../components/home/index'))
+
+export default function Home() {
     return (
-        <Row>
-            <div className="col-lg-6 col-sm-12 mx-auto">
-                <h3 Class="text-success"><b>Seja bem vindo (a)!</b></h3>
-                <p className="lead ">
-                    Aqui em nossa loja, <em><strong>programadores tem desconto</strong></em> nos amigões para sua casa!
-                </p>
-            </div>
-        </Row>
-    );
+        <>
+            <Suspense fallback={<Loading/>}>
+                <Homee/>
+            </Suspense>
+        </>
+    )
 }

@@ -14,6 +14,7 @@ function Rotas() {
             <Route exact path="/nossas_lojas" component={Lojas}/>
             <Route exact path="/contato" component={Contato}/>
             <Route exact path="/home" component={Home}/>
+            <Route exact path="/" component={Home}/>
         </Switch>
     );
 }
